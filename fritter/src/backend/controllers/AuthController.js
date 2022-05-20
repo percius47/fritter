@@ -68,7 +68,7 @@ export const loginHandler = function (schema, request) {
   const { username, password } = JSON.parse(request.requestBody);
   try {
     const foundUser = schema.users.findBy({ username: username });
-    console.log("schema",foundUser.followers);
+ 
     if (!foundUser) {
       return new Response(
         404,
@@ -85,7 +85,7 @@ export const loginHandler = function (schema, request) {
         { _id: foundUser._id, username },
         process.env.REACT_APP_JWT_SECRET
       );
-      console.log("found user",foundUser.following);
+  
       return new Response(200, {}, { foundUser, encodedToken });
     }
     return new Response(

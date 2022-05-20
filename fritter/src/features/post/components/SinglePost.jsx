@@ -46,6 +46,7 @@ export const SinglePost = () => {
   const {
     posts,
     singlePost: currentPost,
+  
     isLoading,
   } = useSelector((state) => state.post);
   const { users, bookmarks } = useSelector((state) => state.user);
@@ -155,7 +156,14 @@ export const SinglePost = () => {
                     </div>
                   </div>
 
-                  <div>{currentPost?.content}</div>
+                  <div className="break-normal">{currentPost?.content}</div>
+                  { 
+         (currentPost?.postImage)?(
+          
+              <img src={currentPost?.postImage} alt="post " className=" w-8/10 mx-auto rounded my-1" />
+          
+          ):null
+          }
                 </div>
               </div>
                 <div className="border-t border-darkGrey text-left pt-2 mt-2 ">
@@ -173,7 +181,7 @@ export const SinglePost = () => {
                 {currentPost?.comments.length > 0 ? (
                 <button
                   className="cursor-pointer hover:underline mx-1"
-                  // onClick={() => setShowLikesModal(true)}
+               
                 >
                   <span className="text-bold">
                     {currentPost?.comments.length}

@@ -19,7 +19,7 @@ export const SearchBar = () => {
 
   return (
     <div className="sticky top-0.5 z-30">
-      <div className="relative m-2.5 w-[80%] mx-auto rounded-full border border-darkGrey focus-within:border-primary bg-darkSecondary">
+      <div className="relative m-2 w-[80%] mx-auto rounded-full border border-darkGrey focus-within:border-primary bg-darkSecondary">
         <input
           type="text"
           onChange={debounce(
@@ -27,7 +27,7 @@ export const SearchBar = () => {
             400
           )}
           placeholder="Search users..."
-          className="bg-inherit py-2 px-4 w-[80%] outline-none rounded-full"
+          className="bg-inherit py-2 px-3 w-[80%] outline-none rounded-full"
         />
         <i class="fa-solid fa-magnifying-glass ml-2 absolute right-4 top-3"></i>
       </div>

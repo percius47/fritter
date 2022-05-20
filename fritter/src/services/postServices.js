@@ -8,10 +8,10 @@ const getSinglePostService = (postId) => {
   return axios.get(`/api/posts/${postId}`);
 };
 
-const createPostService = ({ input, token, user }) => {
+const createPostService = ({ input,postImage, token, user }) => {
   return axios.post(
     "/api/posts",
-    { postData: { content: input, fullName: user.fullName } },
+    { postData: { content: input,postImage, fullName: user.fullName } },
     {
       headers: { authorization: token },
     }

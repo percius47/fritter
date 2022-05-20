@@ -36,7 +36,7 @@ export const ProfileDetails = ({ currentUser }) => {
   const userAlreadyFollowing = followers.find(
     (follower) => follower.username === authUser.username
   );
-console.log("curr user",currentUser);
+
 
   return (
     <div className="profile-details p-4 grid sm:grid-cols-[7rem_1fr] gap-3 border-b border-darkGrey">
@@ -123,7 +123,7 @@ console.log("curr user",currentUser);
                 title: "Following",
                 list: following,
               }));
-              console.log("following",following);
+         
             }
             }
           >

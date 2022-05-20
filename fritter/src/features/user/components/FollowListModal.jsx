@@ -35,7 +35,7 @@ export const FollowListModal = ({ followModal, setFollowModal }) => {
 
               <div className="flex flex-col -mt-0.5">
                 <span>{item.fullName}</span>
-                {console.log("followlis",item)}
+             
                 <span className="text-sm text-lightGrey -mt-1">
                   @{item.username}
                 </span>

@@ -5,7 +5,7 @@ import { UserAvatar } from "../../../components/UserAvatar";
 
 import { addBookmark, removeBookmark } from "../../user/userSlice";
 import { useClickOutside } from "../../../customHooks/useClickOutside";
-// import { likedByLoggedUser, postInBookmarks, getPostDate } from "utils";
+
 import { CommentModal } from "../components/CommentModal";
 import { dislikePost, likePost } from "../postSlice";
 import { PostOptionsModal } from "./PostOptionsModal";
@@ -31,7 +31,7 @@ export const PostCard = ({ post }) => {
   const [showCommentModal, setShowCommentModal] = useState(false);
 
   const currentPost = posts?.find((dbPost) => dbPost._id === post._id);
-  const { _id, username, fullName, content, id, likes, createdAt } =
+  const { _id, username, fullName, content,postImage, id, likes, createdAt } =
     currentPost;
 
   const currentUser = users?.find(
@@ -55,20 +55,76 @@ export const PostCard = ({ post }) => {
         <UserAvatar user={currentUser} />
       </div>
 
-      <div className="flex flex-col gap-1 break-all">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between ">
           <div
-            className="flex items-center gap-1.5"
+            className="flex  gap-2"
             onClick={(e) => {
               e.stopPropagation();
               navigate(`/profile/${username}`);
             }}
           >
-            <span className="font-bold tracking-wide">{fullName}</span>
-            <span className="text-lightGrey">@{username}</span>
+            <div className="flex flex-col cursor-pointer">
+            <span className="font-bold tracking-wide break-normal ">{fullName}</span>
+          
+          <span className="text-lightGrey break-normal ">@{username}</span>
+            </div>
             <span className="text-lightGrey">·</span>
-            <div className="text-lightGrey">{getPostDate(createdAt)}</div>
+            <div className="text-lightGrey break-normal">{getPostDate(createdAt)}</div>
+            
           </div>
+          {/* 
+            <div className="flex flex-col gap-2">
+                  <div className="flex justify-between">
+                    <div
+                      className="flex gap-2"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/profile/${currentPost?.username}`);
+                      }}
+                    >
+                      <div className="flex flex-col cursor-pointer">
+                        <span className="font-bold tracking-wide">
+                          {currentPost?.fullName}
+                        </span>
+                        <span className="text-lightGrey -mt-1">
+                          @{currentPost?.username}
+                        </span>
+                      </div>
+                      <span className="text-lightGrey">·</span>
+                      <div className="text-lightGrey">
+                        {getPostDate(currentPost?.createdAt)}
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                      <MoreHorizIcon
+                        className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
+                        onClick={(e) => {
+                          setShowOptions((prev) => !prev);
+                          e.stopPropagation();
+                        }}
+                      />
+
+                      {showOptions ? (
+                        <PostOptionsModal
+                          post={currentPost}
+                          setShowOptions={setShowOptions}
+                        />
+                      ) : null}
+                    </div>
+                  </div>
+
+                  <div>{currentPost?.content}</div>
+                  { 
+         (currentPost?.postImage)?(
+          
+              <img src={currentPost?.postImage} alt="post " className=" w-8/10 mx-auto rounded my-1" />
+          
+          ):null
+          }
+                </div>
+          */}
 
           <div className="relative">
             <MoreHorizIcon
@@ -88,8 +144,14 @@ export const PostCard = ({ post }) => {
           </div>
         </div>
 
-        <div>{content}</div>
-
+        <div className="break-normal">{content}</div>
+        { 
+         (postImage)?(
+          <div className="w-2/3 h-2/3/ mx-auto my-1">
+              <img src={postImage} alt="post" className=" w-8/10 mx-auto rounded my-1" />
+              </div>
+          ):null
+          }
         <div className="flex gap-6 -ml-2 mt-1">
           <div>
             <button

@@ -18,6 +18,7 @@ export const posts = [
     },
     username: "aditya_jadhav",
     fullName: "Aditya Jadhav",
+    postImage:"https://res.cloudinary.com/dwebygldw/image/upload/v1653066367/frittr/vada-pav_g0u58t.webp",
     createdAt: "2022-05-01",
     updatedAt: formatDate(),
     comments: [
@@ -27,6 +28,7 @@ export const posts = [
           "Nice!",
         fullName: "Anshaal Khanna",
         username: "anshaal10",
+     
         profileAvatar:
         "https://picsum.photos/id/1005/150",
         createdAt: formatDate(),
@@ -65,6 +67,7 @@ export const posts = [
     username: "pareshaaaaan",
     fullName: "Prashant Singh Chauhan",
     createdAt: "2022-05-11",
+    postImage:"https://res.cloudinary.com/dwebygldw/image/upload/v1652908952/frittr/zwpmppawiyxwthsmikyk.webp",
     updatedAt: formatDate(),
     comments: [
       {
@@ -266,6 +269,7 @@ export const posts = [
     username: "johndoe",
     fullName: "John Doe",
     createdAt: "2022-05-09",
+    postImage:"https://res.cloudinary.com/dwebygldw/image/upload/v1653066477/frittr/E-HqxXdWUAM0z-U_a44utb.jpg",
     updatedAt: formatDate(),
     comments: [
       {
@@ -311,6 +315,7 @@ export const posts = [
     },
     username: "johndoe",
     fullName: "John Doe",
+    postImage:"https://res.cloudinary.com/dwebygldw/image/upload/v1653067279/frittr/E7OX3WgXoAEu0gR_z9x7zu.jpg",
     createdAt: "2022-05-01",
     updatedAt: formatDate(),
     comments: [

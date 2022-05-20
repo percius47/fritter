@@ -45,10 +45,10 @@ export const getSinglePost = createAsyncThunk(
 export const createPost = createAsyncThunk(
   "post/createPost",
   async (arg, { rejectWithValue }) => {
-    const { input, token, user } = arg;
+    const { input,postImage, token, user } = arg;
 
     try {
-      const { data, status } = await createPostService({ input, token, user });
+      const { data, status } = await createPostService({ input,postImage, token, user });
 
       if (status === 201) {
         return data.posts;
