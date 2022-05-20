@@ -10,7 +10,7 @@ import { Sidebar } from "../components/Sidebar";
 import { SearchBar } from "../components/SearchBar";
 import { NewPost } from "../features/post/components/NewPost";
 import { PostCard } from "../features/post/components/PostCard";
-
+import {Helmet} from "react-helmet"
 export default function Home ()  {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -34,6 +34,7 @@ export default function Home ()  {
       followingUser.username === post.username 
   )
   );
+
   const postsOfUser=posts?.filter((post)=>
   post?.username===loggedInUser?.username
   )
@@ -46,6 +47,11 @@ export default function Home ()  {
 
   return (
     <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+     <Helmet>
+       <title>
+         Home | frittr 
+       </title>
+     </Helmet>
       <Sidebar />
 
       <div className="sm:border-x border-darkGrey">
@@ -67,7 +73,9 @@ export default function Home ()  {
             ) : sortedPosts?.length ? (
               [...sortedPosts]
                 .reverse()
-                .map((post) => <PostCard post={post} key={post._id} />)
+                .map((post) => 
+                 <PostCard post={post} key={post._id} /> 
+                )
             ) : (
               <div className="p-4 text-center">No posts</div>
             )}

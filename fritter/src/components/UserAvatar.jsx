@@ -1,12 +1,12 @@
 export const UserAvatar = ({ user }) => {
     const avatar = user?.profileAvatar;
   
-    const userInitials = user?.fullName.split(" ");
+    const userInitials = user?.fullName?.split(" ");
   
     const initialsArray = userInitials?.map((initial) =>
       initial[0].toUpperCase()
     );
-  
+   
     return (
       <span className="user-avatar cursor-pointer select-none">
         {avatar ? (

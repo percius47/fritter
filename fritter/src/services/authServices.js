@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const loginService = (loginInput) => {
+  console.log("login service",loginInput);
   return axios.post("/api/auth/login", loginInput);
 };
 

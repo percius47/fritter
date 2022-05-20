@@ -6,14 +6,15 @@ module.exports = {
     extend: {
 
       colors: {
-        primary: "#1d9bf0",
-        light: "#f5f5f5",
+        primary: "#ff3d64",
+        light: "#fcedf0",
         grey: "#cbcbcb",
         lightGrey: "#e2e2e292",
-        darkGrey: "#5a5a5a",
-        dark: "#001527",
-        darkSecondary: "#001e39",
-        red: "#ff2c2c",
+        darkGrey: "#5a5a5a80",
+        dark: "#102b3f",
+        darkSecondary: "#001527",
+        hoverBlue:"#001e39",
+        green: "#1c9c76",
       },
     },
   },

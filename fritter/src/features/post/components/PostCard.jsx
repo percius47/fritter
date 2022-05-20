@@ -17,7 +17,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
-
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 export const PostCard = ({ post }) => {
   const { user, token } = useSelector((state) => state.auth);
   const { users, bookmarks } = useSelector((state) => state.user);
@@ -71,13 +71,13 @@ export const PostCard = ({ post }) => {
           </div>
 
           <div className="relative">
-            <i
-              className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
+            <MoreHorizIcon
+              className=" p-2 cursor-pointer hover:bg-dark hover:rounded-full"
               onClick={(e) => {
                 setShowOptions((prev) => !prev);
                 e.stopPropagation();
               }}
-            ></i>
+            />
 
             {showOptions ? (
               <PostOptionsModal
@@ -103,7 +103,7 @@ export const PostCard = ({ post }) => {
             >
            {
                   likedByLoggedUser(currentPost, user)
-                    ? <FavoriteIcon className="text-red"/>
+                    ? <FavoriteIcon className="text-primary"/>
                     : <FavoriteBorderIcon className="text-primary"/>
                 }
               
@@ -142,7 +142,7 @@ export const PostCard = ({ post }) => {
             {
                 postInBookmarks(bookmarks, _id)
                   ? 
-                  <BookmarkOutlinedIcon/>:<BookmarkBorderOutlinedIcon/>
+                  <BookmarkOutlinedIcon className="text-green"/>:<BookmarkBorderOutlinedIcon className="text-green"/>
               }
           
           </button>

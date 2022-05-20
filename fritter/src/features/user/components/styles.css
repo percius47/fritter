@@ -1,0 +1,13 @@
+.profile-details > .user-avatar,
+.profile-details > .user-avatar > * {
+  height: 7rem;
+  width: 7rem;
+  font-size: 2rem;
+}
+
+.edit-profile > .user-avatar,
+.edit-profile > .user-avatar > * {
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.5rem;
+}

@@ -55,7 +55,7 @@ export const NewPost = ({ post, setShowOptions }) => {
           role="textbox"
           ref={newPostRef}
           contentEditable="true"
-          placeholder="What's happening?"
+          placeholder="What are we eating today?"
           className="w-full break-all bg-inherit outline-none mt-1.5"
           onInput={(e) => setInput(e.currentTarget.textContent)}
         />

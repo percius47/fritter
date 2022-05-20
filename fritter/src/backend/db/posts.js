@@ -10,20 +10,27 @@ export const posts = [
   {
     _id: uuid(),
     content:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione consequatur asperiores optio ipsa magni nam voluptates non ad, et tenetur velit suscipit quasi. Illum, in, dolores vel tempore iste minus nihil placeat velit aliquam totam unde alias aut rem quidem.",
+    "Must try of this week: Vada Pao from SK Vadewale in Pune. The taste is absolutely mind-boggling and fresh.",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
     username: "aditya_jadhav",
+    fullName: "Aditya Jadhav",
     createdAt: "2022-05-01",
     updatedAt: formatDate(),
     comments: [
       {
         _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
         username: "anshaal10",
-        text: "nice",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -31,8 +38,14 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "johndoe",
-        text: "Wow!",
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -43,7 +56,53 @@ export const posts = [
   {
     _id: uuid(),
     content:
-"    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi dolore incidunt atque earum unde, delectus sit tempora nesciunt nobis placeat fuga molestias possimus veritatis quisquam libero impedit nulla temporibus eum in repudiandae blanditiis ut ipsam dolor? Harum, voluptate vel est veniam modi labore ipsam facere hic nostrum esse, eius fugit!"
+    "Went to this hangout place, Bob's in Marathalli yesterday. The ambience is real good and the moctails are really fresh.",
+    likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "pareshaaaaan",
+    fullName: "Prashant Singh Chauhan",
+    createdAt: "2022-05-11",
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
+        username: "anshaal10",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: "2022-05-11",
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        comment:
+          "Wow!",
+        fullName: "Aditya Jadhav",
+        username: "aditya_jadhav",
+        profileAvatar:
+    "https://picsum.photos/id/100/150",
+        createdAt: "2022-05-12",
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    content:
+"Ordered Meghana's Special Chicken Biryani from Meghana's. Recommend 10/10. ✨  "
       ,
     likes: {
       likeCount: 2,
@@ -66,12 +125,19 @@ export const posts = [
       dislikedBy: [],
     },
     username: "anshaal10",
+    fullName:"Anshaal Khanna",
 
     comments: [
       {
         _id: uuid(),
-        username: "pareshaaaaan",
-        text: "Nice!",
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
+        username: "anshaal10",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -79,8 +145,14 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "johndoe",
-        text: "Fascinating",
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -93,20 +165,27 @@ export const posts = [
   {
     _id: uuid(),
     content:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione consequatur asperiores optio ipsa magni nam voluptates non ad, et tenetur velit suscipit quasi. Illum, in, dolores vel tempore iste minus nihil placeat velit aliquam totam unde alias aut rem quidem.",
+    "Went out for dinner at Chili's Hyderabad. The taste reminds me of back home in Autralia.",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "johndoe",
-    createdAt: formatDate(),
+    username: "anshaal10",
+    fullName: "Anshaal Khanna",
+    createdAt: "2022-05-05",
     updatedAt: formatDate(),
     comments: [
       {
         _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
         username: "anshaal10",
-        text: "nice",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -114,12 +193,154 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "john_doe",
-        text: "Wow!",
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
         votes: {
-          upvotedBy: [
-
-          ],
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    content:
+    "Went out for dinner at Chili's Hyderabad. The taste reminds me of back home in Autralia.",
+    likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "johndoe",
+    fullName: "John Doe",
+    createdAt: "2022-05-11",
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
+        username: "anshaal10",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    content:
+    "Nairobi is such a great city with so many people going about their business. One thing that you need to know while there are the places where to find great food/meals. Best recommendation is @al_yusra Restaurant located along Banda Street just next to Nation Centre. #Kenya",
+    likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: []
+    },
+    username: "johndoe",
+    fullName: "John Doe",
+    createdAt: "2022-05-09",
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
+        username: "anshaal10",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    content:
+    "I met this street food seller in Gyeongju on a recommendation from a dating app. This man was adopted and grew up in US. He moved to Korea to find his birth mother. And he did! I often think back to our conversation #MondayMotivation",
+    likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: []
+    },
+    username: "johndoe",
+    fullName: "John Doe",
+    createdAt: "2022-05-01",
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        comment:
+          "Nice!",
+        fullName: "Anshaal Khanna",
+        username: "anshaal10",
+        profileAvatar:
+        "https://picsum.photos/id/1005/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        comment:
+          "Wow!",
+        fullName: "Prashant Singh Chauhan",
+        username: "pareshaaaaan",
+        profileAvatar:
+    "https://picsum.photos/id/1012/150",
+        createdAt: formatDate(),
+        updatedAt: formatDate(),
+        votes: {
+          upvotedBy: [],
           downvotedBy: [],
         },
       },

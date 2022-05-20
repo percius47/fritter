@@ -80,10 +80,11 @@ export const followUser = createAsyncThunk(
       const { data, status } = await followUserService(arg);
 
       if (status === 200) {
-        toast.success(`${data.followUser.username} followed`);
+        toast.success(`Your started following ${data.followUser.username}.`);
         return data;
       }
     } catch {
+      console.log("error following this user");
       return rejectWithValue([], "Error occured. Try again later.");
     }
   }
@@ -96,7 +97,7 @@ export const unfollowUser = createAsyncThunk(
       const { data, status } = await unfollowUserService(arg);
 
       if (status === 200) {
-        toast.success(`${data.followUser.username} unfollowed`);
+        toast.error(`You unfollowed ${data.followUser.username}.`);
         return data;
       }
     } catch {

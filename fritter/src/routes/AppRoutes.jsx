@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 // pages
 import  Home  from "../pages/Home";
-import Explore from "../pages/Explore"
-import  Bookmark from "../pages/Bookmark"
-import UserProfile from "../pages/UserProfile"
+import {Explore} from "../pages/Explore"
+import  {Bookmark} from "../pages/Bookmark"
+import {UserProfile} from "../pages/UserProfile"
 // components
 
 import { PrivateRoute } from "./PrivateRoute";

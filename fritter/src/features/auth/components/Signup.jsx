@@ -41,7 +41,7 @@ export const Signup = () => {
         <div className="w-80 bg-darkSecondary m-auto p-4 rounded-lg border-light border shadow-darkSecondary shadow-xl">
         <div className="p-4 flex items-center mx-auto justify-center ">
           <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary " />
-            <h1 className="font-extrabold text-center text-grey">Fritter</h1>
+            <h1 className="font-extrabold text-center text-grey">Frittr</h1>
            
           </div>
             <div className="m-auto text-center text-3xl font-medium">
