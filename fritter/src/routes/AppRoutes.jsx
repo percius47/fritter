@@ -20,6 +20,7 @@ export const AppRoutes = () => {
       <ScrollTop>
         <Routes>
           <Route element={<PrivateRoute />}>
+          <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/post/:postId" element={<SinglePost />} />

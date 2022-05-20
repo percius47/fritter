@@ -44,7 +44,7 @@ export default function Home ()  {
 
 
   const sortedPosts = sortByDate(timelinePosts, activeSort);
-  console.log("posts timeline",sortedPosts);
+
 
   return (
     <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
