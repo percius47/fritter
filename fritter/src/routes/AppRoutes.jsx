@@ -11,7 +11,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import  {ScrollTop} from "../components/ScrollTop"
 import { Login } from "../features/auth/components/Login";
 import { Signup } from "../features/auth/components/Signup";
-import SinglePost from "../features/post/components/SinglePost";
+import {SinglePost} from "../features/post/components/SinglePost";
 export const AppRoutes = () => {
   const { token } = useSelector((state) => state.auth);
         
@@ -23,6 +23,7 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/post/:postId" element={<SinglePost />} />
+
 
             <Route path="/bookmarks" element={<Bookmark />} />
             <Route path="/profile/:username" element={<UserProfile />} />

@@ -129,12 +129,16 @@ export const dislikePost = createAsyncThunk(
 
 export const addComment = createAsyncThunk(
   "post/addComment",
-  async (arg, { rejectWithValue }) => {
-    try {
-      const { data, status } = await addCommentService(arg);
 
-      if (status === 201) {
-        return data.posts;
+  async (arg, { rejectWithValue }) => {
+
+    try {
+  
+      const res = await addCommentService(arg);
+ 
+
+      if (res.status === 201) {
+        return res.data.posts;
       }
     } catch {
       return rejectWithValue([], "Error occured. Try again later.");

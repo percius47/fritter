@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginHandler } from "../authSlice";
 import { Loader } from "../../../components/Loader";
-
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 export const Login = () => {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.auth);
@@ -25,14 +25,14 @@ export const Login = () => {
         <Loader />
       ) : (
         <div className="w-80 bg-darkSecondary m-auto p-4 rounded-lg border-light border shadow-darkSecondary shadow-xl">
-          <div className="p-4">
-         
+          <div className="p-4 flex items-center mx-auto justify-center ">
+          <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary " />
             <h1 className="font-extrabold text-center text-grey">Fritter</h1>
-            <div className="m-auto text-center text-3xl font-medium">
+           
+          </div>
+          <div className="m-auto text-center text-3xl font-medium">
               Log In
             </div>
-          </div>
-
           {login.error && (
             <div className="text-center text-red pb-2">
               Error: {login.error}

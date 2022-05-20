@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpHandler } from "../authSlice";
 import { Loader } from "../../../components/Loader";
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
 export const Signup = () => {
   const dispatch = useDispatch();
@@ -38,12 +39,14 @@ export const Signup = () => {
         <Loader />
       ) : (
         <div className="w-80 bg-darkSecondary m-auto p-4 rounded-lg border-light border shadow-darkSecondary shadow-xl">
-          <div className="p-4">
-          <h1 className="font-extrabold text-center text-grey">Fritter</h1>
-
+        <div className="p-4 flex items-center mx-auto justify-center ">
+          <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary " />
+            <h1 className="font-extrabold text-center text-grey">Fritter</h1>
+           
+          </div>
             <div className="m-auto text-center text-3xl font-medium">
               Signup
-            </div>
+          
           </div>
 
           {signup.error && (
