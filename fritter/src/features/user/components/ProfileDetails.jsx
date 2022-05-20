@@ -8,6 +8,7 @@ import { followUser, unfollowUser } from "../../user/userSlice";
 import { EditProfileModal } from "./EditProfileModal";
 import { FollowListModal } from "./FollowListModal";
 import LogoutIcon from '@mui/icons-material/Logout';
+import LanguageIcon from '@mui/icons-material/Language';
 export const ProfileDetails = ({ currentUser }) => {
   const { user, token } = useSelector((state) => state.auth);
   const { users, isLoading } = useSelector((state) => state.user);
@@ -105,7 +106,7 @@ console.log("curr user",currentUser);
                 rel="noreferrer"
                 className="hover:underline text-primary"
               >
-                <i className="fa-solid fa-link mr-1 text-xs"></i>
+                <LanguageIcon className="text-green mr-1"/>
                 {website.slice(12)}
               </a>
             )}
@@ -116,11 +117,14 @@ console.log("curr user",currentUser);
           <div
             className="hover:underline cursor-pointer"
             onClick={() =>
+              {
               setFollowModal(() => ({
                 show: true,
                 title: "Following",
                 list: following,
-              }))
+              }));
+              console.log("following",following);
+            }
             }
           >
             <span className="font-bold">{following.length}</span>{" "}

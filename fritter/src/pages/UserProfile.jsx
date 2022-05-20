@@ -11,7 +11,7 @@ import {Loader} from "../components/Loader"
 import {SuggestedUsers} from "../components/SuggestedUsers"
 import {PostCard} from "../features/post/components/PostCard"
 import { Helmet } from "react-helmet";
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export const UserProfile = () => {
   const { username } = useParams();
   const navigate = useNavigate();
@@ -39,10 +39,10 @@ export const UserProfile = () => {
 
       <div className="sm:border-x border-darkGrey">
         <h1 className="flex items-center px-4 py-2 sticky top-0 bg-[#001527d8] backdrop-blur-sm z-10 border-b border-darkGrey">
-          <i
+          <ArrowBackIcon
             className="fa-solid fa-arrow-left mr-4 cursor-pointer"
             onClick={() => navigate(-1)}
-          ></i>
+          />
           <span>
             <p className="font-bold tracking-wide">{currentUser?.fullName}</p>
             <p className="text-sm text-lightGrey">

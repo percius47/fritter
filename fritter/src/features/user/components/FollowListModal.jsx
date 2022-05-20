@@ -21,6 +21,7 @@ export const FollowListModal = ({ followModal, setFollowModal }) => {
       <div className="flex flex-col justify-center gap-4">
         {list.length ? (
           list.map((item) => (
+            
             <div
               key={item._id}
               className="flex gap-2 cursor-pointer"
@@ -29,10 +30,12 @@ export const FollowListModal = ({ followModal, setFollowModal }) => {
                 setFollowModal(false);
               }}
             >
+     
               <UserAvatar user={item} />
 
               <div className="flex flex-col -mt-0.5">
                 <span>{item.fullName}</span>
+                {console.log("followlis",item)}
                 <span className="text-sm text-lightGrey -mt-1">
                   @{item.username}
                 </span>
