@@ -82,7 +82,7 @@ export const NewPost = ({ post, setShowOptions }) => {
   return (
     <div
       className={`grid grid-cols-[2rem_1fr] gap-2 items-start bg-darkSecondary text-sm  border-darkGrey px-4 py-3 cursor-text ${
-        post ? "w-1/2 shadow-dark shadow-lg rounded border" : "border-b"
+        post ? "w-5/6 shadow-dark shadow-lg rounded border" : "border-b"
       }`}
       onClick={(e) => {
         e.stopPropagation();
@@ -97,7 +97,7 @@ export const NewPost = ({ post, setShowOptions }) => {
           ref={newPostRef}
           contentEditable="true"
           placeholder="What are we eating today?"
-          className="w-full break-all bg-inherit outline-none mt-1.5"
+          className="w-full break-normal bg-inherit outline-none mt-1.5"
           onInput={(e) => setInput(e.currentTarget.textContent)}
         />
 
@@ -116,6 +116,7 @@ export const NewPost = ({ post, setShowOptions }) => {
           {/* <CameraAltIcon className=" absolute text-md bottom-0 right-0"/> */}
         </label>
 
+            <div className="flex gap-3">
         
           {post ? (
     
@@ -135,6 +136,7 @@ export const NewPost = ({ post, setShowOptions }) => {
           >
             {post ? "Save" : "Post"}
           </button>
+          </div>
         </div>
       </form>
     </div>

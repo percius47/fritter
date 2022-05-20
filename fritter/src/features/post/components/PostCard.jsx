@@ -73,58 +73,7 @@ export const PostCard = ({ post }) => {
             <div className="text-lightGrey break-normal">{getPostDate(createdAt)}</div>
             
           </div>
-          {/* 
-            <div className="flex flex-col gap-2">
-                  <div className="flex justify-between">
-                    <div
-                      className="flex gap-2"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate(`/profile/${currentPost?.username}`);
-                      }}
-                    >
-                      <div className="flex flex-col cursor-pointer">
-                        <span className="font-bold tracking-wide">
-                          {currentPost?.fullName}
-                        </span>
-                        <span className="text-lightGrey -mt-1">
-                          @{currentPost?.username}
-                        </span>
-                      </div>
-                      <span className="text-lightGrey">·</span>
-                      <div className="text-lightGrey">
-                        {getPostDate(currentPost?.createdAt)}
-                      </div>
-                    </div>
 
-                    <div className="relative">
-                      <MoreHorizIcon
-                        className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
-                        onClick={(e) => {
-                          setShowOptions((prev) => !prev);
-                          e.stopPropagation();
-                        }}
-                      />
-
-                      {showOptions ? (
-                        <PostOptionsModal
-                          post={currentPost}
-                          setShowOptions={setShowOptions}
-                        />
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div>{currentPost?.content}</div>
-                  { 
-         (currentPost?.postImage)?(
-          
-              <img src={currentPost?.postImage} alt="post " className=" w-8/10 mx-auto rounded my-1" />
-          
-          ):null
-          }
-                </div>
-          */}
 
           <div className="relative">
             <MoreHorizIcon

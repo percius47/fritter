@@ -58,7 +58,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-    "Went to this hangout place, Bob's in Marathalli yesterday. The ambience is real good and the moctails are really fresh.",
+    "Went to this hangout place, Bob's in Marathalli yesterday. The ambience is real good and the mocktails are really fresh.",
     likes: {
       likeCount: 0,
       likedBy: [],

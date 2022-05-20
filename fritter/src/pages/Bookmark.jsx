@@ -36,8 +36,12 @@ export const Bookmark = () => {
 
       <div className="sm:border-x border-darkGrey">
         <div className="text-bold py-2 px-2 sticky top-0 bg-[#001527d8] backdrop-blur-sm z-10 border-b border-darkGrey flex justify-between">
-         <h1 className="m-auto ">
+         <h1  className="  m-auto sm:block hidden">
           Bookmarks
+          </h1>
+        
+          <h1 className="m-auto font-extrabold text-center text-grey block sm:hidden">
+         FRITTR
           </h1>
           <div className="block xl:hidden">
             <SearchBar />
