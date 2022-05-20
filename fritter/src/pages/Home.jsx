@@ -10,7 +10,7 @@ import { Sidebar } from "../components/Sidebar";
 import { SearchBar } from "../components/SearchBar";
 import { NewPost } from "../features/post/components/NewPost";
 import { PostCard } from "../features/post/components/PostCard";
-
+import {Helmet} from "react-helmet"
 export default function Home ()  {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -34,6 +34,7 @@ export default function Home ()  {
       followingUser.username === post.username 
   )
   );
+
   const postsOfUser=posts?.filter((post)=>
   post?.username===loggedInUser?.username
   )
@@ -44,17 +45,25 @@ export default function Home ()  {
 
   const sortedPosts = sortByDate(timelinePosts, activeSort);
 
+
   return (
     <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+     <Helmet>
+       <title>
+         Home | frittr 
+       </title>
+     </Helmet>
       <Sidebar />
 
       <div className="sm:border-x border-darkGrey">
-        <h1 className="text-bold p-4 sticky top-0 bg-[#001527d8] backdrop-blur-sm z-20 border-b border-darkGrey flex justify-between">
+      <div className="text-bold py-2 px-2 sticky top-0 bg-[#001527d8] backdrop-blur-sm z-10 border-b border-darkGrey flex justify-between">
+         <h1 className="m-auto ">
           Home
+          </h1>
           <div className="block xl:hidden">
             <SearchBar />
           </div>
-        </h1>
+          </div>
 
         <div>
           <NewPost />
@@ -65,9 +74,12 @@ export default function Home ()  {
             {isLoading ? (
               <Loader />
             ) : sortedPosts?.length ? (
+           
               [...sortedPosts]
                 .reverse()
-                .map((post) => <PostCard post={post} key={post._id} />)
+                .map((post) => 
+                 <PostCard post={post} key={post._id} /> 
+                )
             ) : (
               <div className="p-4 text-center">No posts</div>
             )}

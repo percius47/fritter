@@ -12,9 +12,9 @@ export const sortByDate = (posts, sortBy) => {
     }
   
     if (sortBy === "Trending") {
-      return [...posts].sort((a, b) => a.likes.likeCount - b.likes.likeCount);
+      return [...posts].sort((a, b) => (a.likes.likeCount+a.comments.length) - (b.likes.likeCount+b.comments.length));
     }
   
     return posts;
   };
-  
+    

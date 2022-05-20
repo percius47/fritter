@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UserAvatar } from "../../../components/UserAvatar";
 import { CommentOptionsModal } from "../components/CommentOptionsModal";
 import { getPostDate } from "../../../utils/getPostDate";
-
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 export const CommentCard = ({ comment, postId }) => {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
@@ -44,13 +44,13 @@ export const CommentCard = ({ comment, postId }) => {
 
           {loggedInUser ? (
             <div className="relative">
-              <i
+              <MoreHorizIcon
                 className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
                 onClick={(e) => {
                   setShowOptions((prev) => !prev);
                   e.stopPropagation();
                 }}
-              ></i>
+              />
 
               {showOptions ? (
                 <CommentOptionsModal

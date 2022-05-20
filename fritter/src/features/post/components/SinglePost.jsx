@@ -32,9 +32,11 @@ import {SuggestedUsers} from "../../../components/SuggestedUsers"
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'; 
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
+import { Helmet } from "react-helmet";
 
 export const SinglePost = () => {
   const { postId } = useParams();
@@ -44,6 +46,7 @@ export const SinglePost = () => {
   const {
     posts,
     singlePost: currentPost,
+  
     isLoading,
   } = useSelector((state) => state.post);
   const { users, bookmarks } = useSelector((state) => state.user);
@@ -75,14 +78,21 @@ export const SinglePost = () => {
 
   return (
     <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+   
+     <Helmet>
+     <title>
+       Posts | frittr 
+     </title>
+   </Helmet>
+   
       <Sidebar />
 
       <div className="sm:border-x border-darkGrey">
         <h1 className="text-bold p-4 sticky top-0 bg-[#001527d8] backdrop-blur-sm z-10">
-          <i
+          <ArrowBackIcon
             className="fa-solid fa-arrow-left mr-4 cursor-pointer"
             onClick={() => navigate(-1)}
-          ></i>
+          />
           Post
         </h1>
 
@@ -146,7 +156,14 @@ export const SinglePost = () => {
                     </div>
                   </div>
 
-                  <div>{currentPost?.content}</div>
+                  <div className="break-normal">{currentPost?.content}</div>
+                  { 
+         (currentPost?.postImage)?(
+          
+              <img src={currentPost?.postImage} alt="post " className=" w-8/10 mx-auto rounded my-1" />
+          
+          ):null
+          }
                 </div>
               </div>
                 <div className="border-t border-darkGrey text-left pt-2 mt-2 ">
@@ -164,7 +181,7 @@ export const SinglePost = () => {
                 {currentPost?.comments.length > 0 ? (
                 <button
                   className="cursor-pointer hover:underline mx-1"
-                  // onClick={() => setShowLikesModal(true)}
+               
                 >
                   <span className="text-bold">
                     {currentPost?.comments.length}
@@ -186,8 +203,8 @@ export const SinglePost = () => {
                   >
                   {
                         likedByLoggedUser(currentPost, user)
-                          ? <FavoriteIcon className="text-red"/>
-                          : <FavoriteBorderIcon/>
+                          ? <FavoriteIcon className="text-primary"/>
+                          : <FavoriteBorderIcon className="text-primary"/>
                       }
                   </button>
                   {currentPost?.likes.likeCount > 0 && (
@@ -200,7 +217,7 @@ export const SinglePost = () => {
                     className="cursor-pointer hover:bg-dark hover:rounded-full"
                     onClick={() => focusInput(newCommentRef)}
                   >
-                  <ModeCommentOutlinedIcon/>
+                  <ModeCommentOutlinedIcon />
                   </button>
                   {currentPost?.comments.length > 0 && (
                     <span className="ml-1">{currentPost?.comments.length}</span>
@@ -222,8 +239,8 @@ export const SinglePost = () => {
                   >
                    {
                         postInBookmarks(bookmarks, currentPost?._id)
-                          ? <BookmarkOutlinedIcon className="text-primary"/>
-                          : <BookmarkBorderOutlinedIcon/>
+                          ? <BookmarkOutlinedIcon className="text-green"/>
+                          : <BookmarkBorderOutlinedIcon className="text-green"/>
                       }
                   </button>
                 </div>
@@ -265,7 +282,7 @@ export const SinglePost = () => {
                   </button>
                 </form>
               </div>
-
+              
               {currentPost?.comments.length > 0
                 ? [...currentPost?.comments]
                     ?.reverse()

@@ -32,7 +32,7 @@ export const Sidebar = () => {
           <Link to="/" className="flex items-center">
          
                    <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary" />
-             <span className="font-extrabold text-center text-grey hidden lg:inline">Fritter</span>
+             <span className="font-extrabold text-center text-grey hidden lg:inline">Frittr</span>
           </Link>
         </li>
 
@@ -42,7 +42,10 @@ export const Sidebar = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className="p-3 w-max hover:bg-darkSecondary hover:rounded-full"
           >
-            <HomeIcon className=" px-1 lg:hidden"/>
+              <span className=" px-1 lg:hidden">
+            <HomeIcon/>
+            </span>
+           
             <span className="hidden lg:inline">Home</span>
           </NavLink>
         </li>
@@ -51,9 +54,12 @@ export const Sidebar = () => {
           <NavLink
             to="/explore"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="p-3 w-max hover:bg-darkSecondary hover:rounded-full"
+            className="p-3 w-max hover:bg-hoverBlue hover:rounded-full"
           >
-            <ExploreIcon className=" px-1 lg:hidden"/>
+            <span className=" px-1 lg:hidden">
+            <ExploreIcon />
+            </span>
+           
             <span className="hidden lg:inline">Explore</span>
           </NavLink>
         </li>
@@ -62,9 +68,12 @@ export const Sidebar = () => {
           <NavLink
             to="/bookmarks"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="p-3 w-max hover:bg-darkSecondary hover:rounded-full"
+            className="p-3 w-max hover:bg-hoverBlue hover:rounded-full"
           >
-            <BookmarkIcon className=" px-1 lg:hidden"/>
+              <span className=" px-1 lg:hidden">
+          <BookmarkIcon/>
+            </span>
+           
             <span className="hidden lg:inline">Bookmarks</span>
           </NavLink>
         </li>
@@ -88,16 +97,16 @@ export const Sidebar = () => {
           <NavLink
             to={`/profile/${currentUser?.username}`}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="px-2 pb-2 flex items-center justify-center gap-2 hover:bg-darkSecondary hover:rounded-full"
+            className="px-2 py-2 flex items-center justify-center gap-2 hover:bg-hoverBlue hover:rounded-full"
           >
             <UserAvatar user={currentUser} />
 
-            <div className="text-sm hidden lg:inline">
-              <p className="font-bold">{currentUser?.fullName}</p>
+            <div className="text-xs hidden lg:inline">
+              <p className="font-bold lg:w-9/10">{currentUser?.fullName}</p>
               <p className="text-lightGrey font-normal">
                 @{currentUser?.username}
               </p>
-            </div>
+            </div>  
           </NavLink>
         </li>
       </ul>

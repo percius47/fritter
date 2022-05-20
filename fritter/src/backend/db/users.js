@@ -10,7 +10,7 @@ export const users = [
     _id: uuid(),
     fullName: "Prashant Singh Chauhan",
     username: "pareshaaaaan",
-    password: "prashnought",
+    password: "123",
     bio: "Hey there, Prashant here",
     website: "https://www.prashantsinghchauhan.netlify.app",
     profileAvatar:
@@ -18,13 +18,18 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     following: [
-      { _id: uuid(), fullName: "John Doe", username: "johndoe" },
-      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav" },
+      { _id: uuid(), fullName: "John Doe", username: "johndoe",profileAvatar:
+      "https://picsum.photos/id/1009/150" },
+    
+    
     ],
     followers: [
-      { _id: uuid(), fullName: "John Doe", username: "johndoe" },
-      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav" },
-      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10" },
+      { _id: uuid(), fullName: "John Doe", username: "johndoe",profileAvatar:
+      "https://picsum.photos/id/1009/150" },
+      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav",profileAvatar:
+      "https://picsum.photos/id/100/150" },
+      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10",profileAvatar:
+      "https://picsum.photos/id/1005/150" },
     ],
   },
   {
@@ -36,14 +41,19 @@ export const users = [
     website: "https://www.johndoe.com",
     profileAvatar:
       "https://picsum.photos/id/1009/150",
-    createdAt: formatDate(),
+    createdAt: "2022-05-05",
     updatedAt: formatDate(),
     following: [
-      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan" },
-      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav" },
+      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan",profileAvatar:
+      "https://picsum.photos/id/1012/150", },
+      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav",profileAvatar:
+      "https://picsum.photos/id/100/150" },
     ],
     followers: [
-      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10" },
+      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10",profileAvatar:
+      "https://picsum.photos/id/1005/150" },
+      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan",profileAvatar:
+      "https://picsum.photos/id/1012/150", }
     ],
   },
   {
@@ -58,11 +68,14 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     following: [
-      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan" },
-      { _id: uuid(), fullName: "John Doe", username: "johndoe" },
+      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan",profileAvatar:
+      "https://picsum.photos/id/1012/150", },
+      { _id: uuid(), fullName: "John Doe", username: "johndoe",profileAvatar:
+      "https://picsum.photos/id/1009/150" },
     ],
     followers: [
-      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan" },
+      { _id: uuid(), fullName: "Aditya Jadhav", username: "aditya_jadhav",profileAvatar:
+      "https://picsum.photos/id/100/150" },
     ],
   },
   {
@@ -77,11 +90,16 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
     following: [
-      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan" },
+      { _id: uuid(), fullName: "Prashant Singh Chauhan", username: "pareshaaaaan",profileAvatar:
+      "https://picsum.photos/id/1012/150", },
+      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10",profileAvatar:
+      "https://picsum.photos/id/1005/150" },
     ],
     followers: [
-      { _id: uuid(), fullName: "John Doe", username: "johndoe" },
-      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10" },
+      { _id: uuid(), fullName: "John Doe", username: "johndoe",profileAvatar:
+      "https://picsum.photos/id/1009/150" },
+      { _id: uuid(), fullName: "Anshaal Khanna", username: "anshaal10",profileAvatar:
+      "https://picsum.photos/id/1005/150" },
     ],
   },
 ];
