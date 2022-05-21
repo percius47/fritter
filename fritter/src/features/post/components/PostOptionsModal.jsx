@@ -4,7 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { deletePost } from "../postSlice";
 import { NewPost } from "./NewPost";
 import { followUser, unfollowUser } from "../../user/userSlice";
-
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
 export const PostOptionsModal = ({ post, setShowOptions }) => {
   const { _id, username } = post;
   const { token, user } = useSelector((state) => state.auth);
@@ -33,7 +36,7 @@ export const PostOptionsModal = ({ post, setShowOptions }) => {
               setShowNewPostModal(true);
             }}
           >
-            <i className="fa-solid fa-pen-to-square mr-2"></i>Edit
+           <EditIcon/> Edit
           </button>
           <button
             className="py-2 px-4 text-left cursor-pointer text-red hover:bg-[#001e396b]"
@@ -43,7 +46,7 @@ export const PostOptionsModal = ({ post, setShowOptions }) => {
               dispatch(deletePost({ token, _id }));
             }}
           >
-            <i className="fa-solid fa-trash mr-2"></i>Delete
+            <DeleteIcon/> Delete
           </button>
         </>
       ) : (
@@ -59,11 +62,7 @@ export const PostOptionsModal = ({ post, setShowOptions }) => {
             setShowOptions(false);
           }}
         >
-          <i
-            className={`mr-2 fa-solid fa-user-${
-              userAlreadyFollowing ? "xmark" : "plus"
-            } `}
-          ></i>
+         {userAlreadyFollowing ? <RemoveIcon/>:<AddIcon/>}
           {userAlreadyFollowing ? "Unfollow" : "Follow"}
         </button>
       )}
