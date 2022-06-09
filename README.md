@@ -1,4 +1,4 @@
-# frittr <img src="https://res.cloudinary.com/dwebygldw/image/upload/v1653124662/frittr/restaurant_menu_white_48dp_sewjgo.svg"/>
+#  <img src="https://res.cloudinary.com/dwebygldw/image/upload/v1653124662/frittr/restaurant_menu_white_48dp_sewjgo.svg"/> frittr
 
 Social Media App for Foodies and Food Bloggers.
 
