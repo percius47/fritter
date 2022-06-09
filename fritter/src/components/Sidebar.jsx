@@ -80,8 +80,8 @@ export const Sidebar = () => {
 
         <li className="px-1 lg:p-0 w-max lg:w-full lg:hidden">
           <button
-            // to="/bookmarks"
-            className="bg-primary rounded-full w-max lg:w-full py-2 px-3 lg:px-3 bottom-20 right-4 fixed sm:static"
+        
+            className="bg-primary rounded-full w-max lg:w-full py-2 px-2.5 lg:px-3 bottom-20 right-4 fixed sm:static"
             onClick={() => 
               setShowNewPostModal(true)
             }
