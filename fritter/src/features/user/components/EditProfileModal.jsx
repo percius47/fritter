@@ -144,7 +144,7 @@ export const EditProfileModal = ({ setEditModal }) => {
             <div className="text-xs text-grey">Website</div>
             <input
               className="bg-inherit w-full text-sm outline-none border-none"
-              type="text"
+              type="url"
               name="website"
               value={editInput.website}
               onChange={editChangeHandler}

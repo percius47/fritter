@@ -12,7 +12,7 @@ export const users = [
     username: "pareshaaaaan",
     password: "123",
     bio: "Hey there, Prashant here",
-    website: "https://www.prashantsinghchauhan.netlify.app",
+    website: "https://github.com/percius47",
     profileAvatar:
     "https://picsum.photos/id/1012/150",
     createdAt: formatDate(),

@@ -29,7 +29,7 @@ export const AppRoutes = () => {
             <Route path="/bookmarks" element={<Bookmark />} />
             <Route path="/profile/:username" element={<UserProfile />} />
           </Route>
-
+       
           {!token ? (
             <>
               <Route path="/login" element={<Login />} />

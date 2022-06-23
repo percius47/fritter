@@ -5,4 +5,4 @@ export const getSearchedUser = (users, searchString) => {
         user.fullName.toLowerCase().includes(searchString.toLowerCase())
     );
   };
-  
+   

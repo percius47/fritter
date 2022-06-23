@@ -10,7 +10,7 @@ export const loginHandler = createAsyncThunk(
 
     try {
       const { data, status } = await loginService(login.input);
-      console.log("login data",data);
+    
       if (status === 200) {
         localStorage.setItem("SM_token", data.encodedToken);
         localStorage.setItem("SM_user", JSON.stringify(data.foundUser));

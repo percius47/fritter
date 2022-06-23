@@ -77,7 +77,7 @@ export const PostCard = ({ post }) => {
 
           <div className="relative">
             <MoreHorizIcon
-              className=" p-2 cursor-pointer hover:bg-dark hover:rounded-full"
+              className=" p-0.5 cursor-pointer hover:bg-dark hover:rounded-full"
               onClick={(e) => {
                 setShowOptions((prev) => !prev);
                 e.stopPropagation();

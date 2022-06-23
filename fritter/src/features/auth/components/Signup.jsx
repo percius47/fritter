@@ -39,11 +39,15 @@ export const Signup = () => {
         <Loader />
       ) : (
         <div className="w-80 bg-darkSecondary m-auto p-4 rounded-lg border-light border shadow-darkSecondary shadow-xl">
-        <div className="p-4 flex items-center mx-auto justify-center ">
+          <div className="p-4">
+        <div className=" flex items-center mx-auto justify-center ">
           <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary " />
             <h1 className="font-extrabold text-center text-grey">Frittr</h1>
-           
+            </div>
+            <span className="text-center block text-primary font-">Social media for Foodies!</span>
+     
           </div>
+ 
             <div className="m-auto text-center text-3xl font-medium">
               Signup
           

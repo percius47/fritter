@@ -42,9 +42,7 @@ export const Explore = () => {
           </div>
           </div>
 
-        <div>{
-          posts.map((post)=>console.log("post",post))
-          }
+        <div>
           {isLoading ? (
             <Loader />
 

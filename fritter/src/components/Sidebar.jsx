@@ -1,13 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserAvatar } from "../components/UserAvatar";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreIcon from '@mui/icons-material/Explore';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import AddIcon from '@mui/icons-material/Add';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useState } from "react";
 import { PostModal } from "../features/post/components/PostModal";
+import { logoutHandler } from "../features/auth/authSlice";
 const activeStyle = {
   backgroundColor: "#001e39",
   borderRadius: "9999px",
@@ -19,7 +21,7 @@ const activeStyle = {
 export const Sidebar = () => {
   const { user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
   const currentUser = users.find((dbUser) => dbUser.username === user.username);
 
   const [showNewPostModal, setShowNewPostModal] = useState(false);
@@ -65,7 +67,7 @@ export const Sidebar = () => {
         </li>
 
         <li>
-          <NavLink
+          <NavLink 
             to="/bookmarks"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className="p-3 w-max hover:bg-hoverBlue hover:rounded-full"
@@ -76,6 +78,23 @@ export const Sidebar = () => {
            
             <span className="hidden lg:inline">Bookmarks</span>
           </NavLink>
+        </li>
+        <li>
+        
+                 
+                  <div
+                    title="Logout"
+                    className="p-3 cursor-pointer w-full hover:bg-hoverBlue hover:rounded-full flex items-center content-center"
+                    onClick={() => dispatch(logoutHandler())}
+                  >
+                      <span className=" px-1 lg:hidden">
+                      <LogoutIcon className="text-green mx-auto my-1"/>
+            </span>
+           
+            <span className="hidden lg:inline">Logout</span>
+                
+                  </div>
+                
         </li>
 
         <li className="px-1 lg:p-0 w-max lg:w-full lg:hidden">

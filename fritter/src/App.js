@@ -6,10 +6,10 @@ function App() {
   return (  
      <div className="bg-dark text-light">
 <Toaster
-        position="bottom-right"
+        position="bottom-left"
         reverseOrder={false}
         containerStyle={{
-          bottom: "1rem",
+          bottom: "4rem",
           right: "1rem",
           fontSize: "0.9rem",
         }}

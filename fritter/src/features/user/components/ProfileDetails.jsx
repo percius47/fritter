@@ -107,7 +107,8 @@ export const ProfileDetails = ({ currentUser }) => {
                 className="hover:underline text-primary"
               >
                 <LanguageIcon className="text-green mr-1"/>
-                {website.slice(12)}
+                {website.slice(8)}
+         
               </a>
             )}
           </div>

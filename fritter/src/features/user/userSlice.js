@@ -19,7 +19,7 @@ export const getAllUsers = createAsyncThunk(
 
       if (status === 200) {
         return data.users;
-      }
+      } 
     } catch {
       return rejectWithValue([], "Error occured. Try again later.");
     }

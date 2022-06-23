@@ -47,7 +47,7 @@ export const NewPost = ({ post, setShowOptions }) => {
         })
         .catch((err) => console.error(err));
       
-      
+  
       setShowOptions(false);
     }
     
@@ -72,12 +72,15 @@ export const NewPost = ({ post, setShowOptions }) => {
       .catch((err) => console.error(err));
     }
      setInput("");
+     setImage(null);
     newPostRef.current.innerText = "";
   };
 
   useEffect(() => {
     if (post) newPostRef.current.innerText = post.content;
   }, [post]);
+
+
 
   return (
     <div
@@ -113,7 +116,7 @@ export const NewPost = ({ post, setShowOptions }) => {
             }}
           />
     <InsertPhotoIcon className="ml-0"/>
-          {/* <CameraAltIcon className=" absolute text-md bottom-0 right-0"/> */}
+{image && <span className="ml-1 text-primary text-sm font-medium items-center ">{image.name}</span>}
         </label>
 
             <div className="flex gap-3">
@@ -132,7 +135,7 @@ export const NewPost = ({ post, setShowOptions }) => {
           <button
             type="submit"
             className="bg-primary rounded-full py-1 px-3 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={!input.trim() || (post && input.trim() === post.content)}
+            disabled={ !input.trim() || (post && input.trim() === post.content)   }
           >
             {post ? "Save" : "Post"}
           </button>
