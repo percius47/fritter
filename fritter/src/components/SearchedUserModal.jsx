@@ -9,7 +9,7 @@ export const SearchedUsersModal = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col gap-4 w-full p-4 z-40 bg-dark rounded-md border border-darkGrey sticky top-0">
+    <div className="flex flex-col gap-4 w-full p-4 z-40 bg-dark rounded-md border border-darkGrey sticky top-0 -mt-1.2">
       {searchResult.length ? (
         searchResult.map((user) => (
           <div

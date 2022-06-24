@@ -33,7 +33,7 @@ export const SearchBar = () => {
       </div>
 
       {searchVal.length ? (
-        <div className="absolute top-15 w-full mx-4">
+        <div className="absolute top-15 w-9/10 mx-2 ">
           <SearchedUsersModal />
         </div>
       ) : null}

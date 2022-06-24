@@ -82,10 +82,10 @@ export const NewPost = () => {
             />
             <button
               type="button"
-              className="absolute top-1 left-2 text-lg"
+              className="absolute top-1 right-2 text-lg"
               onClick={() => setImage(null)}
             >
-          <CloseRoundedIcon/>
+          <CloseRoundedIcon className="rounded-full bg-darkSecondary"/>
             </button>
           </div>
         ) : null}

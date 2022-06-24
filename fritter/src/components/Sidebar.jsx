@@ -29,7 +29,7 @@ export const Sidebar = () => {
   return (
    
     <aside className="sm:sticky bg-dark  flex sm:flex-col sm:justify-between sm:h-screen sm:top-0 sm:overflow-y-auto overflow-x-hidden fixed bottom-0 left-0 w-full items-center  sm:border-0 border-t-2 border-darkGrey sm:z-0 z-40">
-      <ul className="flex items-center sm:items-start justify-start px-3 py-4 sm:flex-col gap-3 sm:gap-6 tracking-wide grow">
+      <ul className="flex items-center sm:items-start justify-start px-3 py-1 sm:flex-col gap-3 sm:gap-6 tracking-wide grow">
         <li className="sm:pb-3 sm:px-3 hidden sm:block">
           <Link to="/" className="flex items-center">
          
@@ -42,7 +42,7 @@ export const Sidebar = () => {
           <NavLink
             to="/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="p-3 w-max hover:bg-darkSecondary hover:rounded-full"
+            className="p-2 w-max hover:bg-darkSecondary hover:rounded-full"
           >
               <span className=" px-1 lg:hidden">
             <HomeIcon/>
@@ -70,7 +70,7 @@ export const Sidebar = () => {
           <NavLink 
             to="/bookmarks"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className="p-3 w-max hover:bg-hoverBlue hover:rounded-full"
+            className="p-2 w-max hover:bg-hoverBlue hover:rounded-full"
           >
               <span className=" px-1 lg:hidden">
           <BookmarkIcon/>
@@ -84,7 +84,7 @@ export const Sidebar = () => {
                  
                   <div
                     title="Logout"
-                    className="p-3 cursor-pointer w-full hover:bg-hoverBlue hover:rounded-full flex items-center content-center"
+                    className="p-2 cursor-pointer w-full hover:bg-hoverBlue hover:rounded-full flex items-center content-center"
                     onClick={() => dispatch(logoutHandler())}
                   >
                       <span className=" px-1 lg:hidden">

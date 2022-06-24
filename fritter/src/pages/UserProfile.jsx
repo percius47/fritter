@@ -29,7 +29,7 @@ export const UserProfile = () => {
   }, [dispatch]);
 
   return (
-    <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
+    <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-14 sm:m-auto">
       <Helmet>
        <title>
         { currentUser?.fullName|| ""} | frittr 
