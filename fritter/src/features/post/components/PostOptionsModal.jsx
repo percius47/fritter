@@ -8,6 +8,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { PostModal } from "./PostModal";
 export const PostOptionsModal = ({ post, setShowOptions }) => {
   const { _id, username } = post;
   const { token, user } = useSelector((state) => state.auth);
@@ -72,7 +73,11 @@ export const PostOptionsModal = ({ post, setShowOptions }) => {
           className="bg-[#00000080] top-0 left-0 fixed w-full h-full z-30 flex justify-center items-center cursor-default"
           onClick={(e) => e.stopPropagation()}
         >
-          <NewPost post={post} setShowOptions={setShowOptions} />
+           <PostModal
+            post={post}
+            setShowOptions={setShowOptions}
+            setShowNewPostModal={setShowNewPostModal}
+          />
         </div>
       ) : null}
     </div>

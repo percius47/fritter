@@ -18,15 +18,16 @@ const createPostService = ({ input,postImage, token, user }) => {
   );
 };
 
-const editPostService = ({ token, post, input }) => {
+const editPostService = ({ token, postImage,  post, input }) => {
   return axios.post(
     `/api/posts/edit/${post._id}`,
-    { postData: { content: input } },
+    { postData: { content: input, postImage } },
     {
       headers: { authorization: token },
     }
   );
 };
+
 
 const deletePostService = ({ _id, token }) => {
   return axios.delete(`/api/posts/${_id}`, {

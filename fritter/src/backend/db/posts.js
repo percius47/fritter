@@ -64,6 +64,7 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    
     username: "pareshaaaaan",
     fullName: "Prashant Singh Chauhan",
     createdAt: "2022-05-11",
@@ -129,7 +130,7 @@ export const posts = [
     },
     username: "anshaal10",
     fullName:"Anshaal Khanna",
-
+postImage:null,
     comments: [
       {
         _id: uuid(),
@@ -174,6 +175,7 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    postImage:null,
     username: "anshaal10",
     fullName: "Anshaal Khanna",
     createdAt: "2022-05-05",
@@ -220,6 +222,7 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    postImage:null,
     username: "johndoe",
     fullName: "John Doe",
     createdAt: "2022-05-11",

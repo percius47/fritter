@@ -4,13 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { UserAvatar } from "../../../components/UserAvatar";
 import { updateProfile, setLoading } from "../../user/userSlice";
 import { focusInput } from "../../../utils/focusInput";
-import { createPost, editPost } from "../postSlice";
+import { createPost  } from "../postSlice";
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import toast from "react-hot-toast";
-const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dwebygldw/image/upload";
-const CLOUDINARY_UPLOAD_PRESET = "ru8cort4";
-export const NewPost = ({ post, setShowOptions }) => {
+import { uploadImage } from "../../../utils/uploadImage";
+
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+
+
+
+
+
+export const NewPost = () => {
   const [input, setInput] = useState("");
+  const [image, setImage] = useState(null);
 
   const { token, user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.user);
@@ -21,72 +28,34 @@ export const NewPost = ({ post, setShowOptions }) => {
   const currentUser = users?.find(
     (dbUser) => dbUser.username === user.username
   );
-  const [editInput, setEditInput] = useState(currentUser);
-  const [image, setImage] = useState(null);
 
-
-
-  const submitPost = (e) => {
+  const submitPost = async (e) => {
     e.preventDefault();
 
-    if (post) {
-      const file = image;
-      const formData = new FormData();
-  
-      formData.append("file", file);
-      formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-      formData.append("folder", "frittr");
-  
-      fetch(CLOUDINARY_URL, {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          return dispatch(createPost({ input,postImage:data.url, token, user }));
-        })
-        .catch((err) => console.error(err));
-      
-  
-      setShowOptions(false);
-    }
-    
-    else {
+;
+
+    if (image) {
+      const resp = await uploadImage(image);
+      dispatch(
+        createPost({
+          input,
+          postImage: resp.url,
      
-      
-      const file = image;
-    const formData = new FormData();
+          token,
+          user,
+        })
+      );
+    } else
+      dispatch(createPost({ input, postImage:"", token, user }));
 
-    formData.append("file", file);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-    formData.append("folder", "frittr");
-
-    fetch(CLOUDINARY_URL, {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        return dispatch(createPost({ input,postImage:data.url, token, user }));
-      })
-      .catch((err) => console.error(err));
-    }
-     setInput("");
-     setImage(null);
+    setInput("");
+    setImage(null);
     newPostRef.current.innerText = "";
   };
 
-  useEffect(() => {
-    if (post) newPostRef.current.innerText = post.content;
-  }, [post]);
-
-
-
   return (
     <div
-      className={`grid grid-cols-[2rem_1fr] gap-2 items-start bg-darkSecondary text-sm  border-darkGrey px-4 py-3 cursor-text ${
-        post ? "w-5/6 shadow-dark shadow-lg rounded border" : "border-b"
-      }`}
+      className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-darkSecondary text-sm  border-b border-darkGrey px-4 py-3 cursor-text"
       onClick={(e) => {
         e.stopPropagation();
         focusInput(newPostRef);
@@ -99,49 +68,54 @@ export const NewPost = ({ post, setShowOptions }) => {
           role="textbox"
           ref={newPostRef}
           contentEditable="true"
-          placeholder="What are we eating today?"
-          className="w-full break-normal bg-inherit outline-none mt-1.5"
+          placeholder="What's happening?"
+          className="w-full break-all bg-inherit outline-none mt-1.5"
           onInput={(e) => setInput(e.currentTarget.textContent)}
         />
 
-        <div className="justify-between flex gap-2">
-        <label className="edit-profile cursor-pointer ml-1  my-2">
-          <input
-            type="file"
-            className="hidden"
-            onChange={(e) => {
-              Math.round(e.target.files[0].size / 1024000) > 1
-                ? toast.error("File size should not be more than 1Mb")
-                : setImage(e.target.files[0]);
-            }}
-          />
-    <InsertPhotoIcon className="ml-0"/>
-{image && <span className="ml-1 text-primary text-sm font-medium items-center ">{image.name}</span>}
-        </label>
-
-            <div className="flex gap-3">
-        
-          {post ? (
-    
+        {image ? (
+          <div className="relative">
+            <img
+              src={URL.createObjectURL(image)}
+              className="w-full h-auto rounded-md"
+              alt="demo"
+            />
             <button
-              type="reset"
-              className="border border-primary rounded-full py-1 px-3"
-              onClick={() => setShowOptions(false)}
+              type="button"
+              className="absolute top-1 left-2 text-lg"
+              onClick={() => setImage(null)}
             >
-              Cancel
+          <CloseRoundedIcon/>
             </button>
-          ) : null}
+          </div>
+        ) : null}
+
+        <div className="ml-auto flex items-center gap-4">
+          <label className="cursor-pointer text-lg">
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) =>
+                Math.round(e.target.files[0].size / 1024000) > 1
+                  ? toast.error("File size should not be more than 1Mb")
+                  : setImage(e.target.files[0])
+              }
+            />
+        <InsertPhotoIcon/>
+          </label>
 
           <button
             type="submit"
             className="bg-primary rounded-full py-1 px-3 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={ !input.trim() || (post && input.trim() === post.content)   }
+            disabled={!input.trim() && !image}
           >
-            {post ? "Save" : "Post"}
+            Post
           </button>
-          </div>
         </div>
       </form>
+
     </div>
   );
 };
+

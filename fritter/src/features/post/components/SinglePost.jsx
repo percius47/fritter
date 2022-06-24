@@ -140,7 +140,7 @@ export const SinglePost = () => {
 
                     <div className="relative">
                       <MoreHorizIcon
-                        className="fa-solid fa-ellipsis p-2 cursor-pointer hover:bg-dark hover:rounded-full"
+                        className="fa-solid fa-ellipsis p-0.5 cursor-pointer hover:bg-dark hover:rounded-full"
                         onClick={(e) => {
                           setShowOptions((prev) => !prev);
                           e.stopPropagation();
